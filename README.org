@@ -22,6 +22,11 @@ It also provides some alternative interfaces for running the package as an execu
 *** GitHub Action
 *** Docker image
 *** Nix flake
+This repository contains a Nix flake, so you can run the application using =nix run=, e.g.:
+
+#+begin_src sh
+nix run github:akirak/org-make-toc-action -- README.org
+#+end_src
 ** Credits
 - Adam Porter, a.k.a. alphapapa, for writing the [[https://github.com/alphapapa/org-make-toc][org-make-toc]] package.
 - Steve Purcell for [[https://github.com/purcell/nix-emacs-ci][nix-emacs-ci]] which helped with producing a smaller Docker image of Emacs.
