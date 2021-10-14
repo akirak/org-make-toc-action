@@ -7,6 +7,7 @@
   (kill-emacs 1))
 
 (let ((has-error nil))
+  (setq make-backup-files nil)
   (dolist (file command-line-args-left)
     (if (string-match-p (rx ".org" eol) file)
         (let ((start (float-time)))
