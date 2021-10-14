@@ -4,8 +4,6 @@ on:
   schedule:
     # Every month
     - cron: '0 5 9 * *'
-  # Only for testing
-  push:
 
 jobs:
   update:
