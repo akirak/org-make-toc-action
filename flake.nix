@@ -68,6 +68,13 @@
         rec {
           packages = flake-utils.lib.flattenTree {
             executable = wrapper;
+            image = pkgs.dockerTools.buildImage {
+              name = "org-make-toc";
+              tag = "latest";
+              created = "now";
+              contents = wrapper;
+              config.Cmd = [ "/bin/org-make-toc" ];
+            };
           };
           defaultPackage = packages.executable;
           apps.org-make-toc = flake-utils.lib.mkApp {
