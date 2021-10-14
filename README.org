@@ -17,6 +17,11 @@ This is a GitHub Action which updates TOCs in Emacs Org mode files using [[https
 It also provides some alternative interfaces for running the package as an executable.
 
 :CONTENTS:
+- [[#usage][Usage]]
+  - [[#github-action][GitHub Action]]
+  - [[#docker-image][Docker image]]
+  - [[#nix-flake][Nix flake]]
+- [[#credits][Credits]]
 :END:
 ** Usage
 *** GitHub Action
