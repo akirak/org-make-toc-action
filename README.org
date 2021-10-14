@@ -14,7 +14,6 @@ It also provides some alternative interfaces for running the package as an execu
 #+END_HTML
 
 :CONTENTS:
-- [[#usage][Usage]]
 :END:
 ** Usage
 *** GitHub Action
