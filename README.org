@@ -2,16 +2,19 @@
 :PROPERTIES:
 :TOC:  :include descendants
 :END:
-# Add CI badges here
-
-This is a GitHub Action which updates TOCs in Emacs Org mode files using [[https://github.com/alphapapa/org-make-toc][org-make-toc]] by alphapapa.
-It also provides some alternative interfaces for running the package as an executable.
 
 #+BEGIN_HTML
 <a href="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml">
 <img src="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml/badge.svg">
 </a>
+<br>
+<a href="https://builtwithnix.org">
+<img src="https://builtwithnix.org/badge.svg" alt="built with nix">
+</a>
 #+END_HTML
+
+This is a GitHub Action which updates TOCs in Emacs Org mode files using [[https://github.com/alphapapa/org-make-toc][org-make-toc]] by alphapapa.
+It also provides some alternative interfaces for running the package as an executable.
 
 :CONTENTS:
 :END:
