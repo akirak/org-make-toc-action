@@ -1,0 +1,29 @@
+* org-make-toc-action
+:PROPERTIES:
+:TOC:  :include descendants
+:END:
+# Add CI badges here
+
+This is a GitHub Action which updates TOCs in Emacs Org mode files using [[https://github.com/alphapapa/org-make-toc][org-make-toc]] by alphapapa.
+It also provides some alternative interfaces for running the package as an executable.
+
+#+BEGIN_HTML
+<a href="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml">
+<img src="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml/badge.svg">
+</a>
+#+END_HTML
+
+:CONTENTS:
+- [[#usage][Usage]]
+:END:
+** Usage
+*** GitHub Action
+*** Docker image
+*** Nix flake
+** Credits
+- Adam Porter, a.k.a. alphapapa, for writing the [[https://github.com/alphapapa/org-make-toc][org-make-toc]] package.
+- Steve Purcell for [[https://github.com/purcell/nix-emacs-ci][nix-emacs-ci]] which helped with producing a smaller Docker image of Emacs.
+** COMMENT Meta :noexport:
+:PROPERTIES:
+:TOC:      ignore
+:END:
