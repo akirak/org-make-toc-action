@@ -96,6 +96,10 @@
                 nix-linter.enable = true;
               };
             };
+            update-toc = pkgs.runCommandNoCC "update-toc" { } ''
+              ${packages.executable}/bin/org-make-toc README.org
+              touch $out
+            '';
           };
           devShell = nixpkgs.legacyPackages.${system}.mkShell {
             inherit (self.checks.${system}.pre-commit-check) shellHook;
