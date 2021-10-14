@@ -1,5 +1,30 @@
 {
   "nodes": {
+    "emacs-ci": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "pre-commit-hooks": "pre-commit-hooks"
+      },
+      "locked": {
+        "lastModified": 1632624918,
+        "narHash": "sha256-rRNfkvs8IsT14IHDEKLvKwScEgr7nGTxkWl4b6arBEE=",
+        "owner": "akirak",
+        "repo": "nix-emacs-ci",
+        "rev": "6c0498e8b656c350418a77168d7b1652aecde390",
+        "type": "github"
+      },
+      "original": {
+        "owner": "akirak",
+        "ref": "add-flake",
+        "repo": "nix-emacs-ci",
+        "type": "github"
+      }
+    },
     "emacs-overlay": {
       "locked": {
         "lastModified": 1634180865,
@@ -87,13 +112,37 @@
         "type": "github"
       }
     },
+    "pre-commit-hooks_2": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1633788342,
+        "narHash": "sha256-wx+aRtR5FwbMOV/0N3PSC4au92aXl6tfwHOk4xgYXRQ=",
+        "owner": "cachix",
+        "repo": "pre-commit-hooks.nix",
+        "rev": "475b1f7f7ddcb6415e6624a68c4fe90f55ee9e73",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "repo": "pre-commit-hooks.nix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "emacs-ci": "emacs-ci",
         "emacs-overlay": "emacs-overlay",
         "flake-utils": "flake-utils",
         "gitignore": "gitignore",
         "nixpkgs": "nixpkgs",
-        "pre-commit-hooks": "pre-commit-hooks"
+        "pre-commit-hooks": "pre-commit-hooks_2"
       }
     }
   },
