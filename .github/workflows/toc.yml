@@ -1,0 +1,15 @@
+name: Update TOC
+
+on:
+  push:
+    paths:
+    - '*.org'
+
+jobs:
+  toc:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./
+      with:
+        patterns: README.org

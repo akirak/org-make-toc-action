@@ -1,0 +1,12 @@
+name: 'org-make-toc'
+author: 'Akira Komamura'
+description: 'Update TOCs in Org files'
+inputs:
+  patterns:
+    description: A comma-separated list of glob patterns for Org files
+    required: true
+runs:
+  using: docker
+  image: action.dockerfile
+  args:
+    - ${{ inputs.patterns }}
