@@ -82,9 +82,7 @@
                 pkgs.coreutils
                 pkgs.bashInteractive
               ];
-              config.Cmd = [
-                "/bin/org-make-toc"
-              ];
+              config.Entrypoint = [ "/bin/bash" "/bin/org-make-toc" ];
             };
           };
           defaultPackage = packages.executable;
