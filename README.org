@@ -4,7 +4,6 @@
 <a href="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml">
 <img src="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml/badge.svg">
 </a>
-<br>
 <a href="https://builtwithnix.org">
 <img src="https://builtwithnix.org/badge.svg" alt="built with nix">
 </a>
