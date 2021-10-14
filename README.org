@@ -1,0 +1,20 @@
+* org-make-toc-action
+:PROPERTIES:
+:TOC:  :include all
+:END:
+# Add CI badges here
+
+#+BEGIN_HTML
+#+END_HTML
+
+:CONTENTS:
+- [[#org-make-toc-action][org-make-toc-action]]
+  - [[#usage][Usage]]
+:END:
+
+** Usage
+
+** COMMENT Meta :noexport:
+:PROPERTIES:
+:TOC:      ignore
+:END:
