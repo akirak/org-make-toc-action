@@ -1,11 +1,10 @@
 name: Build image
 
 on:
-  pull_request:
   push:
-    paths-ignore:
-      - '*.md'
-      - '*.org'
+    paths:
+      - 'flake.*'
+      - 'src/**'
 
 jobs:
   build-and-push-image:
