@@ -1,0 +1,28 @@
+name: Update
+
+on:
+  schedule:
+    # Every month
+    - cron: '0 5 9 * *'
+  # Only for testing
+  push:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@v14
+      with:
+        install_url: https://nixos-nix-install-tests.cachix.org/serve/vij683ly7sl95nnhb67bdjjfabclr85m/install
+        install_options: '--tarball-url-prefix https://nixos-nix-install-tests.cachix.org/serve'
+        extra_nix_config: |
+          experimental-features = nix-command flakes
+    - run: nix flake update
+    - uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: 'Automatic updating of flake inputs'
+        base: master
+        title: 'chore: Update dependencies'
+        branch: update-bot/flake
+        labels: bot,flake,update
