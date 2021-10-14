@@ -1,7 +1,4 @@
 * org-make-toc-action
-:PROPERTIES:
-:TOC:  :include descendants
-:END:
 
 #+BEGIN_HTML
 <a href="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml">
@@ -15,7 +12,10 @@
 
 This is a GitHub Action which updates TOCs in Emacs Org mode files using [[https://github.com/alphapapa/org-make-toc][org-make-toc]] by alphapapa.
 It also provides some alternative interfaces for running the package as an executable.
-
+** Table of contents                                              :noexport:
+:PROPERTIES:
+:TOC:      :include siblings :depth 2 :ignore this
+:END:
 :CONTENTS:
 - [[#usage][Usage]]
   - [[#github-action][GitHub Action]]
@@ -25,13 +25,26 @@ It also provides some alternative interfaces for running the package as an execu
 :END:
 ** Usage
 *** GitHub Action
+This repository contains [[https://github.com/akirak/org-make-toc-action/blob/master/.github/workflows/toc.yml][an example]] workflow which updates the TOC of this document and push the change to the branch.
+
+The action accepts a single required input parameter =patterns= which is a comma-separated glob patterns of target files.
 *** Docker image
+You can also use [[https://github.com/akirak/org-make-toc-action/pkgs/container/org-make-toc][the Docker image]] provided in this repository directly:
+
+#+begin_src sh
+docker run -v $PWD:/data -w /data -t ghcr.io/akirak/org-make-toc:latest README.org
+#+end_src
+
+It accepts Org files as arguments.
 *** Nix flake
 This repository contains a Nix flake, so you can run the application using =nix run=, e.g.:
 
 #+begin_src sh
 nix run github:akirak/org-make-toc-action -- README.org
 #+end_src
+
+Since this is a flake, you can also integrate it with your flake project by using [[https://github.com/cachix/pre-commit-hooks.nix/][pre-commit-hooks.nix]], for example.
+The package name is =executable=.
 ** Credits
 - Adam Porter, a.k.a. alphapapa, for writing the [[https://github.com/alphapapa/org-make-toc][org-make-toc]] package.
 - Steve Purcell for [[https://github.com/purcell/nix-emacs-ci][nix-emacs-ci]] which helped with producing a smaller Docker image of Emacs.
