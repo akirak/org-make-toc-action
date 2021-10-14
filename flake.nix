@@ -77,8 +77,14 @@
               name = "org-make-toc";
               tag = "latest";
               created = "now";
-              contents = wrapper;
-              config.Cmd = [ "/bin/org-make-toc" ];
+              contents = [
+                wrapper
+                pkgs.coreutils
+                pkgs.bashInteractive
+              ];
+              config.Cmd = [
+                "/bin/org-make-toc"
+              ];
             };
           };
           defaultPackage = packages.executable;
