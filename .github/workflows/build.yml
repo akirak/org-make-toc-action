@@ -2,9 +2,9 @@ name: Build image
 
 on:
   push:
-    paths:
-      - 'flake.*'
-      - 'src/**'
+    paths-ignore:
+      - '*.org'
+      - '.github/**'
 
 jobs:
   build-and-push-image:
