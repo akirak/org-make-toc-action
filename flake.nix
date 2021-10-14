@@ -36,7 +36,7 @@
           src = gitignoreSource ./src;
           # Of emacs, emacsGit, and emacsGcc, emacs was the fastest
           # even in processing.
-          emacs = (pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages
+          emacs = (pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages
             (epkgs: [ epkgs.org-make-toc ]);
           # I thought portable dumping might make the startup process
           # faster, but it made little difference (0.38s -> 0.33s).
