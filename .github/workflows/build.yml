@@ -44,6 +44,7 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+      if: ${{ github.ref == 'refs/heads/master' }}
 
     - name: Push image
       run: |
@@ -58,3 +59,4 @@ jobs:
         echo VERSION=$VERSION
         docker tag org-make-toc:latest $IMAGE_ID:$VERSION
         docker push $IMAGE_ID:$VERSION
+      if: ${{ github.ref == 'refs/heads/master' }}
