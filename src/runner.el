@@ -2,6 +2,10 @@
 
 (require 'org-make-toc)
 
+(unless command-line-args-left
+  (message "Requires an argument")
+  (kill-emacs 1))
+
 (let ((has-error nil))
   (dolist (file command-line-args-left)
     (if (string-match-p (rx ".org" eol) file)
