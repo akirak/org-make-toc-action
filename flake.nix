@@ -69,6 +69,13 @@
             makeWrapper ${emacs}/bin/emacs $out/bin/org-make-toc \
               --add-flags "-Q --batch --script $src/runner.el"
           '';
+
+          gh-entrypoint = pkgs.linkFarm "org-make-toc-gh" [
+            {
+              name = "gh-entrypoint.sh";
+              path = ./gh-entrypoint.sh;
+            }
+          ];
         in
         rec {
           packages = flake-utils.lib.flattenTree {
@@ -81,6 +88,7 @@
                 wrapper
                 pkgs.coreutils
                 pkgs.bashInteractive
+                gh-entrypoint
               ];
               config.Entrypoint = [ "/bin/bash" "/bin/org-make-toc" ];
             };
