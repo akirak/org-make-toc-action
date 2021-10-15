@@ -1,5 +1,4 @@
 * org-make-toc-action
-
 #+BEGIN_HTML
 <a href="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml">
 <img src="https://github.com/akirak/org-make-toc-action/actions/workflows/build.yml/badge.svg">
