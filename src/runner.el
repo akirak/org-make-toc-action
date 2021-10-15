@@ -1,5 +1,8 @@
 ;;; -*- lexical-binding: t -*-
 
+;; Prevent error message open when a file is opened in a buffer
+(setq vc-handled-backends nil)
+
 (require 'org-make-toc)
 
 (unless command-line-args-left
