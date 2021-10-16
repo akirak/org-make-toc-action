@@ -5,8 +5,9 @@
 </a>
 #+END_HTML
 
-This is a GitHub Action which updates TOCs in Emacs Org mode files using [[https://github.com/alphapapa/org-make-toc][org-make-toc]] by alphapapa.
-It also provides some alternative interfaces for running the package as an executable.
+This is a GitHub Action which updates TOCs in Emacs Org mode files.
+It uses [[https://github.com/alphapapa/org-make-toc][org-make-toc]] by alphapapa which provides a rich API to fine-grained control of output.
+This repository also provides a Docker image and a Nix flake which run an executable version of the library.
 ** Table of contents                                              :noexport:
 :PROPERTIES:
 :TOC:      :include siblings :depth 2 :ignore this
@@ -24,13 +25,14 @@ This repository contains [[https://github.com/akirak/org-make-toc-action/blob/ma
 
 The action accepts a single required input parameter =patterns= which is a comma-separated glob patterns of target files.
 *** Docker image
-You can also use [[https://github.com/akirak/org-make-toc-action/pkgs/container/org-make-toc][the Docker image]] provided in this repository directly:
+You can also use [[https://github.com/akirak/org-make-toc-action/pkgs/container/org-make-toc][a Docker image]] from this repository.
+It is currently hosted on GitHub Container Registry:
 
 #+begin_src sh
 docker run -v $PWD:/data -w /data -t ghcr.io/akirak/org-make-toc:latest README.org
 #+end_src
 
-It accepts Org files as arguments.
+It accepts Org files (not glob patterns) as arguments.
 *** Nix flake
 This repository contains a Nix flake, so you can run the application using =nix run=, e.g.:
 
