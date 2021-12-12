@@ -15,13 +15,8 @@
     url = "github:nix-community/emacs-overlay";
     inputs.nixpkgs.follows = "nixpkgs";
   };
-  inputs.emacs-ci = {
-    url = "github:akirak/nix-emacs-ci/add-flake";
-    inputs.nixpkgs.follows = "nixpkgs";
-    inputs.flake-utils.follows = "flake-utils";
-  };
 
-  outputs = { self, nixpkgs, flake-utils, gitignore, pre-commit-hooks, emacs-overlay, emacs-ci }:
+  outputs = { self, nixpkgs, flake-utils, gitignore, pre-commit-hooks, emacs-overlay }:
     flake-utils.lib.eachSystem
       [
         "x86_64-linux"
@@ -41,7 +36,7 @@
           src = gitignoreSource ./src;
           # Of emacs, emacsGit, and emacsGcc, emacs was the fastest
           # even in processing.
-          emacs = (pkgs.emacsPackagesFor emacs-ci.packages.${system}.emacs-snapshot).emacsWithPackages
+          emacs = (pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages
             (epkgs: [ epkgs.org-make-toc ]);
           # I thought portable dumping might make the startup process
           # faster, but it made little difference (0.38s -> 0.33s).
