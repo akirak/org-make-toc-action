@@ -44,7 +44,6 @@ Since this is a flake, you can also integrate it with your flake project by usin
 The package name is =executable=.
 ** Credits
 - Adam Porter, a.k.a. alphapapa, for writing the [[https://github.com/alphapapa/org-make-toc][org-make-toc]] package.
-- Steve Purcell for [[https://github.com/purcell/nix-emacs-ci][nix-emacs-ci]] which helped with producing a smaller Docker image of Emacs.
 ** COMMENT Meta :noexport:
 :PROPERTIES:
 :TOC:      ignore
